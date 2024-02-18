@@ -4,16 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="signUp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-       <form>
-        <h1>Sign In</h1>
+       <form id="form" >
         <div class="input">
-            <label>Email</label>
-            <input type="email"/>
-            <label>Password</label>
-            <input type="password"/>
+            <h1>Sign In</h1>
+            <div class="input-div">
+                <label>Email</label><br>
+            <input type="email" id="email"/>
+            </div>
+            <br>
+             <div class="input-div">
+                <label>Password</label><br>
+                <input type="password" id="pswd"/>
+             </div>
+             <button id="btn">SIGN IN</button>
         </div>
        </form>
+
+
+
+       <script>
+        const btn = document.getElementById("btn");
+
+btn.addEventListener("click", (e) =>{
+    const email = document.getElementById("email").value;
+    const pswd = document.getElementById("pswd").value;
+    console.log({
+        email, 
+        pswd
+    });
+});
+       </script>
 </body>
 </html>
