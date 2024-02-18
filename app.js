@@ -34,8 +34,16 @@ todoRef.on('value', function(snapshot) {
       });
     });
 
+    var deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', function() {
+      // Remove the todo item from Firebase
+      todoRef.child(todoKey).remove();
+    });
+
     listItem.appendChild(checkBox);
     listItem.appendChild(document.createTextNode(todoItem));
+    listItem.appendChild(deleteButton);
 
     if (childSnapshot.val().completed) {
       listItem.classList.add('completed');

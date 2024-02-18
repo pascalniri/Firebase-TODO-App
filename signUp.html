@@ -22,7 +22,7 @@
                 <label>Password</label><br>
                 <input type="password" id="pswd"/>
              </div>
-             <button id="btn">SIGN IN</button>
+             <button id="btn"><a href="app.js">SIGN IN</a></button>
         </div>
        </form>
 
@@ -32,12 +32,12 @@
         const btn = document.getElementById("btn");
 
 btn.addEventListener("click", (e) =>{
+    e.preventDefault();
     const email = document.getElementById("email").value;
     const pswd = document.getElementById("pswd").value;
-    console.log({
-        email, 
-        pswd
-    });
+    if(email.value ==='' && pswd.value === ''){
+        alert('Please enter required fields');
+    } 
 });
        </script>
 </body>
